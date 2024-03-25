@@ -4,6 +4,7 @@
 #include <iostream>
 #include <SDL2/SDL.h>
 #include <string.h>
+#include <glad.h>
 
 typedef struct
 {   
@@ -20,20 +21,20 @@ class SDLInterface
 {
 private:
     SDL_Window *window;
-    SDL_GLContext *glContext;
-    _WindowFeat *windowfeat;
+    SDL_GLContext glContext;
+    _WindowFeat windowfeat;
 
+    bool CreateWindow();
+    bool CreateContext();
+    void InitializeOpenGl();
+    bool LoadGladFunction();
+    bool InitSDL();
 
-
-
-
+    void MainSDLProcess();
 
 public:     
     SDLInterface();
     ~SDLInterface();   
-    bool CreateWindow();
-    bool CreateContext();
-    bool InitSDL();
 
 };
 

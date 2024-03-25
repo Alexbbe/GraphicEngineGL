@@ -7,7 +7,6 @@ int main()
 {
 
     SDLInterface sdl; 
-    sdl.CreateWindow();
 
     return 0;
 }
