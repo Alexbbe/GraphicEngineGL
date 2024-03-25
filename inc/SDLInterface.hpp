@@ -3,6 +3,17 @@
 
 #include <iostream>
 #include <SDL2/SDL.h>
+#include <string.h>
+
+typedef struct
+{   
+    std::string title;
+    int xPosition;
+    int yPosition;
+    int width;
+    int height;
+    int flags;
+}  _WindowFeat;
 
 
 class SDLInterface
@@ -10,6 +21,9 @@ class SDLInterface
 private:
     SDL_Window *window;
     SDL_GLContext *glContext;
+    _WindowFeat *windowfeat;
+
+
 
 
 
@@ -19,7 +33,7 @@ public:
     ~SDLInterface();   
     bool CreateWindow();
     bool CreateContext();
-    void Init();
+    bool InitSDL();
 
 };
 

@@ -26,15 +26,46 @@ SDLInterface::~SDLInterface()
 }
 
 
+
+bool SDLInterface::InitSDL()
+{
+    bool retval = true;
+
+
+    if(SDL_Init(SDL_INIT_VIDEO < 0))
+    {
+        std::cout<<"SDL - video mode could not be initialized"<<std::endl;
+        retval = false;
+
+
+    }
+
+    return retval;
+
+}
+
+
+
 bool SDLInterface::CreateWindow()
 {
-    bool retval = false;
+    bool retval = true;
 
+    window = SDL_CreateWindow(windowfeat->title.c_str(),
+                                windowfeat->xPosition, 
+                                windowfeat->yPosition, 
+                                windowfeat->width, 
+                                windowfeat->height, 
+                                windowfeat->flags);
 
-
-
-
-
+    if(window!=nullptr)
+    {
+        std::cout<<"Window was created with success"<<std::endl;       
+    }
+    else
+    {
+        std::cout<<"Window is null ptr"<<std::endl;
+        retval = false;
+    }
 
 
 
@@ -44,7 +75,7 @@ bool SDLInterface::CreateWindow()
 
 bool SDLInterface::CreateContext()
 {
-    bool retval = false;
+    bool retval = true;
 
 
 
@@ -59,14 +90,5 @@ bool SDLInterface::CreateContext()
 }
 
 
-void SDLInterface::Init()
-{
-    this->CreateWindow();
-    this->CreateContext();
-
-
-
-
-}
 
 
