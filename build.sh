@@ -12,4 +12,4 @@ cp GraphicEngineGL ../build/GraphicEngineGL
 cd ..
 rm -rfv CmakeTemp
 ./build/GraphicEngineGL
-# rm  ./build/GraphicEngineGL
+rm  ./build/GraphicEngineGL
