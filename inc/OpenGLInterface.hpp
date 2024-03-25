@@ -1,20 +1,31 @@
+#ifndef __OPENGLINTERFACE__
+#define __OPENGLINTERFACE__
+
+
 #include <iostream>
 #include <SDL2/SDL.h>
+#include <vector>
 
 
 
 class OpenGLInterface
 {
-public:
+private:
+    bool LoadVertexBuffers(std::vector<float> buffer);
+    
+
     
 
 
 
 
 
-private:
-
-
+public:
+    OpenGLInterface();
+    ~OpenGLInterface();
 
 
 };
+
+
+#endif
