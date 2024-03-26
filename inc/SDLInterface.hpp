@@ -23,12 +23,15 @@ private:
     SDL_Window *window;
     SDL_GLContext glContext;
     _WindowFeat windowfeat;
+    SDL_Event event;
+    bool quit;
 
     bool CreateWindow();
     bool CreateContext();
     void InitializeOpenGl();
     bool LoadGladFunction();
     bool InitSDL();
+    void EventListener();
 
     void MainSDLProcess();
 

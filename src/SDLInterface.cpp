@@ -2,7 +2,8 @@
 
 
 SDLInterface::SDLInterface():
-window(nullptr)
+window(nullptr),
+quit(false)
 {
     std::cout<<"Calling default constructor"<<std::endl;
     windowfeat.xPosition = 0;
@@ -34,6 +35,19 @@ void SDLInterface::MainSDLProcess()
     CreateWindow();
     CreateContext();
     LoadGladFunction();
+    EventListener();
+}
+
+void SDLInterface::EventListener()
+{
+    while(quit == false)
+    {
+        SDL_PollEvent(&event);
+        if(event.type == SDL_QUIT)
+        {
+            quit = true;
+        }
+    }
 
 }
 
