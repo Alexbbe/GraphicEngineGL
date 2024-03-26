@@ -32,8 +32,8 @@ private:
     bool LoadGladFunction();
     bool InitSDL();
     void EventListener();
-
     void MainSDLProcess();
+
 
 public:     
     SDLInterface();
